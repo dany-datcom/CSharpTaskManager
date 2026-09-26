@@ -12,6 +12,14 @@ public class TaskItem
 
     public TaskMetadata Metadata { get; set; }
 
+    /// <summary>
+    /// Creates a new task with the specified information and current creation time.
+    /// </summary>
+    /// <param name="id">The unique identifier of the task.</param>
+    /// <param name="title">The title of the task.</param>
+    /// <param name="description">The description of the task.</param>
+    /// <param name="priority">The priority assigned to the task.</param>
+    /// <param name="status">The current status of the task.</param>
     public TaskItem(
         int id,
         string title,
@@ -27,6 +35,15 @@ public class TaskItem
         Metadata = new TaskMetadata(id);
     }
 
+    /// <summary>
+    /// Creates a task using an existing creation date when loading saved data.
+    /// </summary>
+    /// <param name="id">The unique identifier of the task.</param>
+    /// <param name="title">The title of the task.</param>
+    /// <param name="description">The description of the task.</param>
+    /// <param name="priority">The priority assigned to the task.</param>
+    /// <param name="status">The current status of the task.</param>
+    /// <param name="createdAt">The original creation date of the task.</param>
     public TaskItem(
         int id,
         string title,

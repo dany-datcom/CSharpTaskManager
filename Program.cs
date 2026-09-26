@@ -50,6 +50,10 @@ while (running)
         break;
 }
 }
+/// <summary>
+/// Prompts the user for task information and creates a new task.
+/// </summary>
+/// <param name="taskManager">The task manager used to generate an ID and store the new task.</param>
 
 static void CreateTask(TaskManager taskManager)
 {

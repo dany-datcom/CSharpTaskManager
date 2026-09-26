@@ -10,16 +10,27 @@ public class TaskManager
 
     private readonly string filePath = "Data/tasks.txt";
 
+    /// <summary>
+    /// Adds a new task to the task manager's collection.
+    /// </summary>
+    /// <param name="task">The task that will be added to the collection.</param>
     public void AddTask(TaskItem task)
     {
         tasks.Add(task);
     }
 
+    /// <summary>
+    /// Generates and returns the next available task ID.
+    /// </summary>
+    /// <returns>The next available integer ID for a task.</returns>
     public int GetNextId()
     {
         return nextId++;
     }
-
+    
+    /// <summary>
+    /// Displays all tasks currently stored in the task manager.
+    /// </summary>
     public void ListTasks()
     {
         if (tasks.Count == 0)
@@ -35,6 +46,9 @@ public class TaskManager
         }
     }
 
+    /// <summary>
+    /// Allows the user to update the title and description of an existing task.
+    /// </summary>
     public void UpdateTask()
     {
         if (tasks.Count == 0)
@@ -74,6 +88,9 @@ public class TaskManager
         Console.WriteLine("Task updated successfully.");
     }
 
+    /// <summary>
+    /// Removes an existing task from the task manager.
+    /// </summary>
     public void DeleteTask()
     {
         if (tasks.Count == 0)
@@ -106,6 +123,9 @@ public class TaskManager
         Console.WriteLine("Task deleted successfully.");
     }
 
+    /// <summary>
+    /// Saves all current tasks to the application's text file.
+    /// </summary>
     public void SaveTasks()
     {
         Directory.CreateDirectory("Data");
@@ -121,6 +141,9 @@ public class TaskManager
         Console.WriteLine("Tasks saved successfully.");
     }
 
+    /// <summary>
+    /// Loads previously saved tasks from the application's text file.
+    /// </summary>
     public void LoadTasks()
     {
         if (!File.Exists(filePath))
